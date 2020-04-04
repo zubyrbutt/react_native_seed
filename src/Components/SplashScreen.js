@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 export default class SplashScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>WELCOME</Text>
+                <Icon name="qq" color="#ffffff" size={44}/>
+                <Text style={{color: "#fff"}}>QQ</Text>
             </View>
         );
     }
@@ -14,7 +17,7 @@ export default class SplashScreen extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "white",
+        backgroundColor: "#FF4332",
         alignItems: 'center',
         justifyContent: 'center'
     }
