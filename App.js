@@ -5,7 +5,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-
 function DetailsScreen() {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -25,6 +24,7 @@ function HomeScreen({ navigation }) {
                     Login with Facebook
                 </Text>
             </Icon.Button>
+
             <Icon name="facebook" color="#3b5998" size={44}/>
 
 
