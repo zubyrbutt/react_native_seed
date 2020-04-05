@@ -79,14 +79,24 @@ export default function App() {
         <NavigationContainer>
             <Tab.Navigator  tabBarOptions={{
                 activeTintColor: '#e91e63',
+
+                // cutting off your tab labels
+                showLabel: true,
+
             }}>
                 <Tab.Screen
+                    options={{
+                        tabBarIcon: () => <Icon name="home" color="#000" size={44} />
+                    }}
                     name="Home"
                     component={HomeStackScreen}
-
                 />
 
-                <Tab.Screen name="Settings" component={SettingsStackScreen} />
+                <Tab.Screen name="Settings" component={SettingsStackScreen}
+                options={{
+                   tabBarIcon: () => <Icon name="weibo" color="#000" size={44} />
+                }}
+                />
             </Tab.Navigator>
         </NavigationContainer>
     );

@@ -7,7 +7,7 @@ export default class SplashScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Icon name="qq" color="#ffffff" size={44}/>
+                <Icon name="mobile" color="#ffffff" size={100}/>
                 <Text style={{color: "#fff"}}>QQ</Text>
             </View>
         );
