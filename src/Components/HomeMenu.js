@@ -11,7 +11,7 @@ function HomeMenu() {
     return (
         <View style={styles.container}>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <View>
+            <View style={{padding: 2,}}>
                 <TouchableOpacity style={{
                     borderWidth: 1,
                     borderColor: 'white',
@@ -119,8 +119,7 @@ const styles = StyleSheet.create({
         flex: 1,
         width: "100%",
         marginTop: 10,
-        height: 120,
-        //backgroundColor: "white",
+        backgroundColor: "white",
         flexDirection: 'row',
         justifyContent: 'center',
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Text, View, TouchableOpacity,Image } from 'react-native';
+import { Button, Text, View, TouchableOpacity,Image, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -21,7 +21,7 @@ function DetailsScreen() {
 
 function HomeScreen({ navigation }) {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ flex: 1, backgroundColor: '#fcfcfc', justifyContent: 'center', alignItems: 'center' }}>
 
             <Search/>
 
@@ -81,31 +81,37 @@ function SettingsStackScreen() {
 
 const Tab = createBottomTabNavigator();
 
-export default function App() {
 
-    return (
-        <NavigationContainer>
-            <Tab.Navigator  tabBarOptions={{
-                activeTintColor: '#e91e63',
+export default class App extends React.Component {
+    render() {
+        return (
 
-                // cutting off your tab labels
-                showLabel: true,
+            <NavigationContainer>
+                <Tab.Navigator tabBarOptions={{
+                    activeTintColor: '#e91e63',
 
-            }}>
-                <Tab.Screen
-                    options={{
-                        tabBarIcon: () => <Icon name="google-home" color="#000" size={44} />
-                    }}
-                    name="Home"
-                    component={HomeStackScreen}
-                />
+                    // cutting off your tab labels
+                    showLabel: true,
 
-                <Tab.Screen name="Settings" component={SettingsStackScreen}
-                options={{
-                   tabBarIcon: () => <AIcon name="customerservice" color="#000" size={44} />
-                }}
-                />
-            </Tab.Navigator>
-        </NavigationContainer>
-    );
+                }}>
+                    <Tab.Screen
+                        options={{
+                            tabBarIcon: () => <Icon name="google-home" color="#e91e63" size={44}/>
+                        }}
+                        name="Home"
+                        component={HomeStackScreen}
+                    />
+
+                    <Tab.Screen name="Settings" component={SettingsStackScreen}
+                                options={{
+                                    tabBarIcon: () => <AIcon name="customerservice" color="#000" size={44}/>
+                                }}
+                    />
+                </Tab.Navigator>
+            </NavigationContainer>
+
+
+        )
+    }
+
 }
