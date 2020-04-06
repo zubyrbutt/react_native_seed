@@ -3,7 +3,9 @@ import { Button, Text, View, TouchableOpacity,Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import AIcon from 'react-native-vector-icons/AntDesign';
+import Card from "./src/Components/Card";
 
 function DetailsScreen() {
     return (
@@ -18,14 +20,15 @@ function DetailsScreen() {
 function HomeScreen({ navigation }) {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <Card/>
             <Text>Home screen</Text>
-            <Icon.Button name="twitter" backgroundColor="#3b5998">
-                <Text style={{ fontFamily: 'Arial', fontSize: 15 }}>
-                    Login with Facebook
-                </Text>
-            </Icon.Button>
+            {/*<Icon.Button name="twitter" backgroundColor="#3b5998">*/}
+            {/*    <Text style={{ fontFamily: 'Arial', fontSize: 15 }}>*/}
+            {/*        Login with Facebook*/}
+            {/*    </Text>*/}
+            {/*</Icon.Button>*/}
 
-            <Icon name="facebook" color="#3b5998" size={44}/>
+            {/*<Icon name="facebook" color="#3b5998" size={44}/>*/}
 
 
             <Button
@@ -75,6 +78,7 @@ function SettingsStackScreen() {
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+
     return (
         <NavigationContainer>
             <Tab.Navigator  tabBarOptions={{
@@ -86,7 +90,7 @@ export default function App() {
             }}>
                 <Tab.Screen
                     options={{
-                        tabBarIcon: () => <Icon name="home" color="#000" size={44} />
+                        tabBarIcon: () => <Icon name="google-home" color="#000" size={44} />
                     }}
                     name="Home"
                     component={HomeStackScreen}
@@ -94,7 +98,7 @@ export default function App() {
 
                 <Tab.Screen name="Settings" component={SettingsStackScreen}
                 options={{
-                   tabBarIcon: () => <Icon name="weibo" color="#000" size={44} />
+                   tabBarIcon: () => <AIcon name="customerservice" color="#000" size={44} />
                 }}
                 />
             </Tab.Navigator>
