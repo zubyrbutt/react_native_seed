@@ -2,13 +2,15 @@ import React, {Component} from 'react';
 import {Text, View, StyleSheet, Image, ScrollView} from 'react-native';
 import AIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {SafeAreaView} from "react-native-safe-area-context";
+import HomeMenu from "./HomeMenu";
 
 
 export default class Card extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <ScrollView>
+                <ScrollView showsVerticalScrollIndicator={false}>
+                    <HomeMenu/>
                     <View style={styles.card}>
                         <View style={styles.CardImage}>
                             <Image style={styles.CardImage} source={require('../images/mobile.jpg')} />
@@ -99,7 +101,7 @@ const styles = StyleSheet.create({
         margin: 10,
     },
     card:{
-        width: 190,
+        width: 180,
         height: 230,
         backgroundColor: "#fff",
         //borderColor: 'red',

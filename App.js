@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AIcon from 'react-native-vector-icons/AntDesign';
 import Card from "./src/Components/Card";
 import Search from "./src/Components/Search";
+import HomeMenu from "./src/Components/HomeMenu";
 
 function DetailsScreen() {
     return (
@@ -21,7 +22,9 @@ function DetailsScreen() {
 function HomeScreen({ navigation }) {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+
             <Search/>
+
             <Card/>
             <Text>Home screen</Text>
             {/*<Icon.Button name="twitter" backgroundColor="#3b5998">*/}
@@ -29,7 +32,6 @@ function HomeScreen({ navigation }) {
             {/*        Login with Facebook*/}
             {/*    </Text>*/}
             {/*</Icon.Button>*/}
-
             {/*<Icon name="facebook" color="#3b5998" size={44}/>*/}
 
 

@@ -9,20 +9,16 @@ export default class Search extends Component {
 
                 <View style={styles.container}>
 
-                        {/* this for email  */}
                         <TextInput
-
                             style={styles.input}
-
                             underlineColorAndroid='transparent'
                             placeholder="Samsung A20, Iphone X .."
                             keyboardType='default'
                             returnKeyType='search'
                             autoCorrect={false}
                         />
-
                 </View>
-                <Text>This is just text</Text>
+
             </SafeAreaView>
         );
     }
