@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, ScrollView,Alert} from 'react-native';
 import {createStackNavigator} from "@react-navigation/stack";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -7,7 +7,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const HomeStack = createStackNavigator();
 
+const showAlert = () =>{
+    Alert.alert(
+        'this is just test alert with custom title'
+    )
+}
 function HomeMenu() {
+
     return (
         <View style={styles.container}>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -24,7 +30,9 @@ function HomeMenu() {
                     justifyContent: 'center',
                     marginHorizontal: 16,
                     marginTop: 15,
-                }}>
+                }}
+                onPress={showAlert}
+                >
                     <Icon name="mobile" color="#fff" size={40}/>
 
                 </TouchableOpacity>

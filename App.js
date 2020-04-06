@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Text, View, TouchableOpacity,Image, StyleSheet } from 'react-native';
+import { Button, Text, View,StatusBar, TouchableOpacity,Image, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -22,7 +22,7 @@ function DetailsScreen() {
 function HomeScreen({ navigation }) {
     return (
         <View style={{ flex: 1, backgroundColor: '#fcfcfc', justifyContent: 'center', alignItems: 'center' }}>
-
+            <StatusBar hidden={true} />
             <Search/>
 
             <Card/>
