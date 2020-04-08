@@ -6,6 +6,7 @@ import {AppRegistry, StyleSheet} from 'react-native';
 import App from './App';
 import {name as appName} from './app.json';
 import SplashScreen from "./src/Components/SplashScreen";
+//import App from "./src/Components/Api";
 
 class Main extends Component{
     constructor(props) {

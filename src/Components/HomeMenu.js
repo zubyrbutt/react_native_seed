@@ -29,7 +29,7 @@ function HomeMenu() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginHorizontal: 16,
-                    marginTop: 15,
+                   // marginTop: 15,
                 }}
                 onPress={showAlert}
                 >
@@ -39,82 +39,7 @@ function HomeMenu() {
                 <Text style={{textAlign: 'center'}}>samsung</Text>
             </View>
 
-        <View>
-            <TouchableOpacity style={{
-                borderWidth: 1,
-                borderColor: 'white',
-                alignSelf: 'flex-start',
-                width: 60,
-                height: 60,
-                backgroundColor: '#487eb0',
-                borderRadius: 50,
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginHorizontal: 16,
-                marginTop: 15,
-            }}>
-                <Icon name={"mobile"} size={40} color="#fff"/>
 
-            </TouchableOpacity>
-            <Text style={{textAlign: 'center'}}>samsung</Text>
-
-        </View>
-                <View>
-                    <TouchableOpacity style={{
-                    borderWidth: 1,
-                    borderColor: 'white',
-                    alignSelf: 'flex-start',
-                    width: 60,
-                    height: 60,
-                    backgroundColor: '#00a8ff',
-                    borderRadius: 50,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginHorizontal: 16,
-                    marginTop: 15,
-                }}>
-                    <Icon name={"mobile"} size={40} color="#fff"/>
-                </TouchableOpacity>
-                    <Text style={{textAlign: 'center'}}>samsung</Text>
-                </View>
-
-            <View>
-                <TouchableOpacity style={{
-                    borderWidth: 1,
-                    borderColor: 'white',
-                    alignSelf: 'flex-start',
-                    width: 60,
-                    height: 60,
-                    backgroundColor: '#9c88ff',
-                    borderRadius: 50,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginHorizontal: 16,
-                    marginTop: 15,
-                }}>
-                    <Icon name={"mobile"} size={40} color="#fff"/>
-                </TouchableOpacity>
-                <Text style={{textAlign: 'center'}}>samsung</Text>
-            </View>
-
-            <View>
-                <TouchableOpacity style={{
-                    borderWidth: 1,
-                    borderColor: 'white',
-                    alignSelf: 'flex-start',
-                    width: 60,
-                    height: 60,
-                    backgroundColor: '#e84118',
-                    borderRadius: 50,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginHorizontal: 16,
-                    marginTop: 15,
-                }}>
-                    <Icon name={"mobile"} size={40} color="#fff"/>
-                </TouchableOpacity>
-                <Text style={{textAlign: 'center'}}>samsung</Text>
-            </View>
             </ScrollView>
         </View>
     );
@@ -124,29 +49,12 @@ export default HomeMenu;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         width: "100%",
         marginTop: 10,
-        backgroundColor: "white",
+        backgroundColor: "red",
         flexDirection: 'row',
         justifyContent: 'center',
 
     },
-    HomeMenu: {
-        borderWidth: 1,
-       borderColor: 'white',
-        alignSelf: 'flex-start',
-        width: 60,
-        height: 60,
-        backgroundColor: '#ddd',
-        borderRadius: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginHorizontal: 16,
-        marginTop: 15,
-    },
-    HomeMenuIcons:{
 
-
-    }
 });

@@ -23,8 +23,6 @@ function HomeScreen({ navigation }) {
     return (
         <View style={{ flex: 1, backgroundColor: '#fcfcfc', justifyContent: 'center', alignItems: 'center' }}>
             <StatusBar hidden={true} />
-            <Search/>
-
             <Card/>
             <Text>Home screen</Text>
             {/*<Icon.Button name="twitter" backgroundColor="#3b5998">*/}
