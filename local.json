@@ -1,0 +1,16 @@
+{
+  "name" : "Alex",
+  "age" : 20,
+  "subject" : [
+    {
+      "id": "1",
+      "name": "SubA",
+      "grade": "B"
+    },
+    {
+      "id" : "2",
+      "name" : "SubB",
+      "grade" : "C"
+    }
+  ]
+}

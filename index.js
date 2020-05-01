@@ -1,12 +1,14 @@
 /**
  * @format
  */
+import 'react-native-gesture-handler';
 import React, {Component} from 'react';
-import {AppRegistry, StyleSheet} from 'react-native';
+import {AppRegistry, StatusBar, View} from 'react-native';
 import App from './App';
 import {name as appName} from './app.json';
 import SplashScreen from "./src/Components/SplashScreen";
-//import App from "./src/Components/Api";
+
+
 
 class Main extends Component{
     constructor(props) {
@@ -17,8 +19,11 @@ class Main extends Component{
         },2000)
     }
     render(){
+
         const {currentScreen} = this.state;
-        return currentScreen === 'SplashScreen' ? <SplashScreen/> : <App />;
+        return currentScreen === 'SplashScreen' ? <SplashScreen/> : <App/>;
+
+
     }
 }
 

@@ -1,115 +1,89 @@
 import * as React from 'react';
-import { Button, Text, View,StatusBar, TouchableOpacity,Image, StyleSheet } from 'react-native';
+import {Button, View, Text, Image, StyleSheet, TouchableOpacity, StatusBar} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import AIcon from 'react-native-vector-icons/AntDesign';
-import Card from "./src/Components/Card";
-import Search from "./src/Components/Search";
-import HomeMenu from "./src/Components/HomeMenu";
+import Icon from "react-native-vector-icons/FontAwesome";
+import Icon5 from "react-native-vector-icons/FontAwesome5";
+import Fontisto from "react-native-vector-icons/MaterialCommunityIcons";
 
-function DetailsScreen() {
-    return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Details!</Text>
-        </View>
-    );
-}
 
+import SorahMulk from "./src/Components/Swiper";
+import AudioPlayer from "./src/Components/AudioPlayer";
+import Information from "./src/Components/Info";
+import TextTicker from "react-native-text-ticker";
 
 
 function HomeScreen({ navigation }) {
     return (
-        <View style={{ flex: 1, backgroundColor: '#fcfcfc', justifyContent: 'center', alignItems: 'center' }}>
-            <StatusBar hidden={true} />
-            <Card/>
-            <Text>Home screen</Text>
-            {/*<Icon.Button name="twitter" backgroundColor="#3b5998">*/}
-            {/*    <Text style={{ fontFamily: 'Arial', fontSize: 15 }}>*/}
-            {/*        Login with Facebook*/}
-            {/*    </Text>*/}
-            {/*</Icon.Button>*/}
-            {/*<Icon name="facebook" color="#3b5998" size={44}/>*/}
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <StatusBar barStyle = "dark-content" hidden = {true} backgroundColor = "#00BCD4" translucent = {true}/>
+
+            <TouchableOpacity onPress={() => navigation.navigate('Mulk')}>
+                <View style={styles.ReadQuran}>
+                    <Icon name='book' color='#009432' size={60} />
+                    <Text style={{textAlign: 'center', justifyContent: 'center'}}>Read</Text>
+                </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => navigation.navigate('Player')}>
+                <View style={styles.ReadQuran}>
+                    <Icon5 name='headphones-alt' color='#009432' size={60} />
+                    <Text style={{textAlign: 'center', justifyContent: 'center'}}>Listen Audio</Text>
+                </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => navigation.navigate('Info')}>
+                <View style={styles.ReadQuran}>
+                    <Fontisto name='information-variant' color='#009432' size={60} />
+                    <TextTicker
+                        duration={8000}
+                        loop
+                        bounce
+                        repeatSpacer={10}
+                        marqueeDelay={100}
+                        style={{textAlign: 'center', justifyContent: 'center', marginHorizontal:5}}>Benefits of Surah Mulk</TextTicker>
+                </View>
+            </TouchableOpacity>
 
 
-            <Button
-                title="Go to Details"
-                onPress={() => navigation.navigate('Details')}
-            />
         </View>
     );
 }
 
-function SettingsScreen({ navigation }) {
+const Stack = createStackNavigator();
+
+function App() {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Settings screen</Text>
-            <Button
-                title="Go to Details"
-                onPress={() => navigation.navigate('Details')}
-
-            />
-
-        </View>
+        <NavigationContainer>
+            <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Home">
+                <Stack.Screen name="Home" component={HomeScreen} />
+                <Stack.Screen name="Mulk" component={SorahMulk} />
+                <Stack.Screen name="Player" component={AudioPlayer}/>
+                <Stack.Screen name="Info" component={Information}/>
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 }
 
-const HomeStack = createStackNavigator();
-
-function HomeStackScreen() {
-    return (
-        <HomeStack.Navigator screenOptions={{header:() => null}}>
-            <HomeStack.Screen name="Home" component={HomeScreen} />
-            <HomeStack.Screen name="Details" component={DetailsScreen} />
-        </HomeStack.Navigator>
-    );
-}
-
-const SettingsStack = createStackNavigator();
-
-function SettingsStackScreen() {
-    return (
-        <SettingsStack.Navigator>
-            <SettingsStack.Screen name="Settings" component={SettingsScreen} />
-            <SettingsStack.Screen name="Details" component={DetailsScreen} />
-        </SettingsStack.Navigator>
-    );
-}
-
-const Tab = createBottomTabNavigator();
-
-
-export default class App extends React.Component {
-    render() {
-        return (
-
-            <NavigationContainer>
-                <Tab.Navigator tabBarOptions={{
-                    activeTintColor: '#e91e63',
-
-                    // cutting off your tab labels
-                    showLabel: true,
-
-                }}>
-                    <Tab.Screen
-                        options={{
-                            tabBarIcon: () => <Icon name="google-home" color="#e91e63" size={44}/>
-                        }}
-                        name="Home"
-                        component={HomeStackScreen}
-                    />
-
-                    <Tab.Screen name="Settings" component={SettingsStackScreen}
-                                options={{
-                                    tabBarIcon: () => <AIcon name="customerservice" color="#000" size={44}/>
-                                }}
-                    />
-                </Tab.Navigator>
-            </NavigationContainer>
-
-
-        )
+export default App;
+const styles = StyleSheet.create({
+    ImageLogo:{
+        width: 120,
+        height: 120,
+    },
+    ReadQuran:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 5,
+        width: 100,
+        height: 100,
+        borderRadius: 5,
+        backgroundColor: 'white',
+        shadowColor: '#009432',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 1,
+        shadowRadius: 2,
+        elevation: 5
     }
 
-}
+})
